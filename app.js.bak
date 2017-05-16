@@ -12,8 +12,8 @@ App({
       success: function (res) {
         //console.log(res);
         if (res.code) {
-          var appid = 'wxxxxxxxxxxxxxxxxxxxxxxxxxx';
-          var secret = 'ffxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+          var appid = 'wx827ddb3ccdc79fcc';
+          var secret = 'ffdd8b95901de55a0449f588997271c6';
           var code = res.code;
           //发起网络请求
           wx.request({//获取openid
