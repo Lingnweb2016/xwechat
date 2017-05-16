@@ -1,0 +1,12 @@
+.body{height:100%;min-height:1250rpx;background-color:#fff;font-family: "微软雅黑";color:#666;font-size:28rpx;}
+.top2{width:100%;background-color:#0abcdf;text-align:center;color:#fff;font-family:"微软雅黑";padding-top:80rpx;
+    background:linear-gradient(to bottom right, #0367f9 0%, #26bbc1 100%);
+}
+.result-cont{padding-top:40rpx;}
+.topText{display:-webkit-flex;display:flex;height:120rpx;font-size:30rpx;}
+.speed{width:49%;display:-webkit-flex;display:flex;font-size:26rpx;}
+.num{min-width:120rpx;font-size:50rpx;line-height:120rpx;padding:0 20rpx 0 30rpx;}
+.numright{height:72rpx;margin-top:24rpx;text-align:left;}
+.ruleline{height:60rpx;margin-top:30rpx;border-right:1px solid #666;}
+
+.minbtn{color:#fff;border:1px solid #fff;background-color:transparent;}

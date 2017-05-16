@@ -1,0 +1,5 @@
+/* pages/applyDetails/shadowsocks/shadowsocks.wxss */
+.bortop{border-top:1px solid #eee;background-color:#fff;width:100%;}
+.shadtextarea{border:1px solid #eee;margin:20rpx auto;width:670rpx;padding:10rpx;}
+.greentxt{padding:20rpx 30rpx;color:#019a30;}
+.btncont{padding:0 0 60rpx;}

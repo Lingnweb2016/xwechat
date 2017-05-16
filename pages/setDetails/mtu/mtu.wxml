@@ -1,0 +1,21 @@
+<view class="body">
+    <view class="choose">
+        <form>
+            <view class="cont">
+                <view class="Grid2">
+                <view class="Grid-cell2">MTU值</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="number" bindinput="mtuInp" value="{{mtu}}" placeholder="请输入MTU值" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+            </view>
+            <view class="checkboxLine">
+                <label>最大传输单元，默认是1500，如非必要请勿修改</label>
+            </view>
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveMtuChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>

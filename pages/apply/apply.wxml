@@ -1,0 +1,24 @@
+<view class="body">
+  <view class="top-tab flex-wrp flex-tab " >
+      <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}"  wx:key="item.id" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+          {{itemName}}
+      </view>
+  </view>
+  <view class="cont">
+    <view hidden="{{currentNavtab==0 ? '' : true}}">
+      <view class="appcont">
+        <block wx:for="{{iconlist}}" wx:key='item.id'>
+          <view class="appitem" wx:for="{{appList}}" wx:if="{{item == itemName.app_icon}}" wx:key="item.id" wx:for-item="itemName">
+            <navigator url="{{itemName.app_url}}">
+              <view class="apppic"><image class="img" src="../../images/apps/{{itemName.app_icon}}.png"></image></view>
+              <view class="apptitle">{{itemName.app_name}}</view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view hidden="{{currentNavtab==1 ? '' : true}}">
+      <view class="connect-cont"><text>暂无</text></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,64 @@
+<view class="body">
+    <view class="top">
+        <view class="topTitle">上网设置</view>
+        <view class="topText">请选择WAN口上网类型</view>
+    </view>
+    <view class="choose">
+        <form>
+            <view class="cont2">
+                <radio-group name="radio-group">
+                    <label bindtap="radioChange1">
+                        <view class="Grid">   
+                            <view class="Grid-cell">宽带拨号(PPPOE)</view>
+                            <view class="Grid-cell"><radio value="pppoe" checked="{{choseLink == 'pppoe' ? true : false}}"/></view>
+                        </view>
+                    </label>
+                    <label bindtap="radioChange2">
+                        <view class="Grid">
+                            <view class="Grid-cell">自动获取(DHCP)</view>
+                            <view class="Grid-cell"><radio value="dhcp" checked="{{choseLink == 'dhcp' ? true : false}}"/></view>
+                        </view>
+                    </label>
+                    <label bindtap="radioChange3">
+                        <view class="Grid">
+                            <view class="Grid-cell">手动设置(静态IP)</view>
+                            <view class="Grid-cell"><radio value="static" checked="{{choseLink == 'static' ? true : false}}"/></view>
+                        </view>
+                    </label>
+                    <label bindtap="radioChange4">
+                        <view class="Grid">
+                            <view class="Grid-cell">无线中继模式</view>
+                            <view class="Grid-cell"><radio value="relay" checked="{{choseLink == 'relay' ? true : false}}"/></view>
+                        </view>
+                    </label>
+                </radio-group>
+            </view>
+        </form>
+
+
+        <view class="cont">
+            <view class="Grid2">
+                <view class="Grid-cell2 txtbold">连接状态</view>
+                <view class="Grid-cell2 txtright msgStyle" style="color:{{msgColor}}">{{statusMsg}}</view> 
+            </view>
+            <view class="Grid2" hidden="{{isShowTime}}">   
+                <view class="Grid-cell2">连接时间</view>
+                <view class="Grid-cell2 txtright">{{showTime}}</view> 
+            </view>
+            <view class="Grid2">
+                <view class="Grid-cell2">IPV4地址</view>
+                <view class="Grid-cell2 txtright">{{ipv4addr}}</view> 
+            </view>
+            <view class="Grid2">   
+                <view class="Grid-cell2">网关地址</view>
+                <view class="Grid-cell2 txtright">{{gateway}}</view> 
+            </view>
+            <view class="Grid2">
+                <view class="Grid-cell2">DNS地址</view>
+                <view class="Grid-cell2 txtright">{{dnsaddr}}</view> 
+            </view>
+        </view>            
+    </view>
+    
+    
+</view>

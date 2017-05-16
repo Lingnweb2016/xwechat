@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view class="body">
+<view class="top">
+    <view class="topTitle">无线名称： {{ssid2 || ssid5}}</view>
+    <view class="topText">连接设备 : {{sessionNum}} 台</view>
+</view>
+  <view class="cont">
+    <view class="Grid">   
+        <view class="Grid-cell-2">产品型号</view>
+        <view class="Grid-cell-2">{{boardName}}</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell-2">系统版本</view>
+        <view class="Grid-cell-2">{{romVersion}}</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell-2">设备MAC</view>
+        <view class="Grid-cell-2">{{routerMac}}</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell-2">运行时间</view>
+        <view class="Grid-cell-2">{{runTime}}</view>
+    </view>
+  </view>
+  <view class="cont">
+    <view class="Grid">
+        <view class="Grid-cell">
+            <view class="img-cont">
+                <image src="../../images/h-sw.png"/>
+            </view>
+        </view>
+        <view class="Grid-cell">上网方式</view>
+        <view class="Grid-cell" wx:if="{{wanProto == 'dhcp'}}">自动获取</view>
+        <view class="Grid-cell" wx:elif="{{wanProto == 'pppoe'}}">宽带拨号</view>
+        <view class="Grid-cell" wx:elif="{{wanProto == 'static'}}">手动设置</view>
+        <view class="Grid-cell" wx:elif="{{wanProto == 'relay'}}">无线中继</view>
+        <view class="Grid-cell" wx:else>未知</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell">
+            <view class="img-cont">
+                <image src="../../images/h-ipv4.png"/>
+            </view>
+        </view>
+        <view class="Grid-cell">互联网IPV4地址</view>
+        <view class="Grid-cell" wx:if="{{isUp}}">{{ipaddr}}/{{netmask}}</view>
+        <view class="Grid-cell" wx:elif="{{!isUp}}">未连接</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell">
+            <view class="img-cont">
+                <image src="../../images/h-ipv4.png"/>
+            </view>
+        </view>
+        <view class="Grid-cell">局域网IPV4地址</view>
+        <view class="Grid-cell">{{lanAddr}}</view>
+    </view>
+    <view class="Grid">
+        <view class="Grid-cell">
+            <view class="img-cont">
+                <image src="../../images/h-24g.png"/>
+            </view>
+        </view>
+        <view class="Grid-cell">2.4G无线信道</view>
+        <view class="Grid-cell" wx:if="{{channel2=='0'}}">自动</view>
+        <view class="Grid-cell" wx:else>{{channel2}}</view>
+    </view>
+    <block wx:if="{{wifi1}}">
+    <view class="Grid">
+        <view class="Grid-cell">
+            <view class="img-cont">
+                <image src="../../images/h-5g.png"/>
+            </view>
+        </view>
+        <view class="Grid-cell">5G无线信道</view>
+        <view class="Grid-cell" wx:if="{{channel5=='0'}}">自动</view>
+        <view class="Grid-cell" wx:else>{{channel5}}</view>
+    </view>
+    </block>
+  </view>
+
+
+  <view class="cont">
+    <navigator url="../chart/chart">
+        <view class="Grid">
+            <view class="Grid-cell-2">实时内存状态</view>
+            <view class="Grid-cell-2"></view>
+        </view>
+    </navigator>
+  </view>
+</view>

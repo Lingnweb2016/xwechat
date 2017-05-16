@@ -1,0 +1,45 @@
+<view class="body">
+    <view>
+        <view class="cont">
+            <view class="Grid2">
+                <view class="Grid-cell2">启 用</view>
+                <view class="Grid-cell2 switch-tip"></view>
+                <view class="Grid-cell2">
+                    <view class="body-view switch-right">
+                        <switch checked="{{isSwitchChecked}}" bindchange="switchTurnChange"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cont" wx:if="{{isSwitchChecked == 'checked'}}">
+            <view class="Grid2">
+                <view class="Grid-cell1">设 定</view>
+                <view class="Grid-cell3">
+                    <text>每</text>
+                    <picker class="timepicker" value="{{timeindex}}" range="{{time}}" bindchange="bindTimeChange">
+                        <text class="picker1">{{time[timeindex]}}</text>
+                    </picker>
+                    <picker style="display:{{weekShow}}" class="timepicker" value="{{weekindex}}" range="{{week}}" bindchange="bindWeekChange">
+                        <text class="picker1">{{week[weekindex]}}</text>
+                    </picker>
+                    <picker style="display:{{dayShow}}" class="timepicker" value="{{dayindex}}" range="{{day}}" bindchange="bindDayChange">
+                        <text class="picker1">{{day[dayindex]}}</text>
+                    </picker>
+                    <!--<text>，</text>-->
+                    <picker class="timepicker" value="{{hourindex}}" range="{{hour}}" bindchange="bindHourChange">
+                        <text class="picker1">{{hour[hourindex]}}</text>
+                    </picker>
+                    <text>点</text>
+                    <picker class="timepicker" value="{{secondindex}}" range="{{second}}" bindchange="bindSecondChange">
+                        <text class="picker1">{{second[secondindex]}}</text>
+                    </picker>
+                    <text>分</text>
+                </view>
+            </view>
+            <view class="btn-cont">
+                <button class="btn" form-type="submit" bindtap="saveClockChange">保 存</button>
+            </view>
+        </view>
+    </view>
+</view>
+

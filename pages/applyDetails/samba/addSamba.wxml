@@ -1,0 +1,47 @@
+<view class="body">
+    <view class="cont">
+        <view class="Grid2">
+            <view class="Grid-cell2">名　　称</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{curname}}" type="text" bindinput="nameInp" placeholder="请输入名称" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">路　　径</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="text" value="{{curpath}}"  placeholder="{{mountList[pathindex]}}" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2">
+                <picker value="{{pathindex}}" range="{{mountList}}" bindchange="bindPathChange">
+                    <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell2">只　　读</view>
+            <view class="Grid-cell2"></view>
+            <view class="Grid-cell2">
+                <switch type="switch" checked="{{isReadOnly}}" bindchange="switchReadOnly"/>
+            </view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell2">匿名访问</view>
+            <view class="Grid-cell2"></view>
+            <view class="Grid-cell2">
+                <switch type="switch" checked="{{isGuestOk}}" bindchange="switchGuestOk"/>
+            </view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">描　　述</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{curdescription}}" type="text" bindinput="descriptionInp" placeholder="请添加描述" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="btns-cont">
+            <button class="del" bindtap="bindBack" bindtap="backSamba">取 消</button>
+            <button class="save" bindtap="saveAddChange">保 存</button>
+        </view>
+    </view>
+</view>

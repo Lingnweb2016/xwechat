@@ -1,0 +1,53 @@
+
+<view class="body">
+    <view class="top">
+        <view class="topTitle">无线中继设置</view>
+        <view class="topText" wx:if="{{aplist.length}}">
+            <button size="mini" class="minbtn" bindtap="bindRescan">重新扫描</button>
+        </view>
+    </view>
+    <view>
+        <view class="cont">
+            <view class="Grid2">
+                <view class="Grid-cell2">无线名称</view>
+                <view class="Grid-cell2">
+                    <input class="inp" type="text" value="{{ssid}}" bindinput="timenumInp" disabled placeholder="请输入网络名称" placeholder-class="inpplacehold"/>
+                </view> 
+                <view class="Grid-cell2 turnright" bindtap='bindContShow'>
+                    <view class='bluetxt' wx:if='{{contShow == "none"}}'>选择网络</view>
+                </view>
+            </view>
+            <view class="Grid2" style='display:{{pwdShow}}'>
+                <view class='Grid-cell2'>无线密码</view>
+                <view class="Grid-cell2">
+                    <input class="inp" type="text" value='{{ssidPwd}}' password="{{inputType}}" focus='{{isFocus}}' placeholder="请输入密码" placeholder-class="inpplacehold" bindinput="bindPwdInpChange"/>
+                </view> 
+                <view class="Grid-cell2 txtright">
+                    <view class="eyecont" bindtap="changePwdShow"><image class="eyeicon" src="../../../images/{{eyeState}}.png"></image></view>
+                </view>
+            </view>
+        </view>
+        <view class="cont" style='display:{{contShow}}'>
+            <view class="cont-line">选择网络</view>
+            <block wx:for="{{aplist}}" wx:key="item.id">
+                <view class="Grid" bindtap="ssidClick" data-ssid = '{{item.ssid}}' data-lock = '{{item.security}}' data-bssid='{{item.bssid}}' data-channel='{{item.channel}}'>   
+                    <view class="Grid-cell-2">{{item.ssid}}</view>
+                    <view class="Grid-cell-2" wx:if="{{item.security == 'NONE'}}">
+                        <view class="signal-img"><image src='../../../images/signal_png/signal{{item.signal}}.png'></image></view>
+                    </view>
+                    <view class="Grid-cell-2" wx:else>
+                        <view class="signal-img"><image src='../../../images/signal_png/signal{{item.signal}}lock.png'></image></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="btncont" style="display:{{btnShow}}">
+            <button class="btn" form-type="submit" bindtap="saveChange">保 存</button>
+        </view>
+    </view>
+    <view class="loading-cont" style="display:none">
+        <view class='img-cont'><image src="../../../images/loading.gif"></image></view>
+        <view><text>正在搜索无线网络</text></view>
+    </view>
+
+</view>

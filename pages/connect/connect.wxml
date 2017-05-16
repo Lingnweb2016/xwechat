@@ -1,0 +1,147 @@
+<view class="body">
+    <view class="top-tab flex-wrp flex-tab " >
+        <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="item.id" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+            {{itemName}}
+        </view>
+    </view>
+    <view class="cont">
+    <view hidden="{{currentNavtab==0 ? '' : true}}">
+        <view class="top2">
+            <view class="topTitle">
+                <view class="bigCircle">
+                    <view class="circle">
+                        <view class="total" wx:if="{{deviceList.length}}">{{deviceList.length}}</view>
+                        <view class="total" wx:else>0</view>
+                        <view class="onlinenum">在线 {{onlineNum}} 台</view>
+                    </view>
+                </view>
+            </view>
+            <view class="topText">
+                <view class="speed">
+                    <view class="num">{{upload}}</view>
+                    <view class="numright">
+                        <view>Mbps</view>
+                        <view>上行带宽</view>
+                    </view>
+                </view>
+                <view class="speed">
+                    <view class="ruleline"></view>
+                    <view class="num">{{download}}</view>
+                    <view class="numright">
+                        <view>Mbps</view>
+                        <view>下行带宽</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="devices_tab">
+            <text wx:for="{{devClassNav}}" wx:key="item.id" bindtap="changeListTab" wx:for-index="idx" data-idx="{{idx}}" class="{{curDevTab==idx ? 'dev_active' : ' '}}">{{item}}</text>
+        </view>
+        <view class="nav_section">
+        <view>
+            <block wx:for="{{deviceList}}" wx:key="item.id">
+                <view wx:if="{{item.is_black != '1'}}" class="nav_section_items {{item.mac_source == 'offline'?'nav_section_items_offline':' '}}" data-class="{{item.mac_source}}" style="display:{{(item.mac_source==curDevTab)||(curDevTab=='all')?'flex':'none'}}">
+                    <!--image-->
+                    <view class="section_image" data-aid="{{item.id}}">
+                    <block wx:if="{{Organizations[item.vendor]}}">
+                        <image src="../../images/organiz/{{Organizations[item.vendor]}}" mode="aspectFill"></image>
+                    </block>
+                    <block wx:else>
+                        <image wx:if="{{item.mac_source == 'LAN'}}" src="../../images/organiz/lan.png" mode="aspectFill"></image>
+                        <image wx:else src="../../images/organiz/wireless.png" mode="aspectFill"></image>
+                    </block>
+                    </view>
+                    <!--content-->
+                    <view class="section_cont" data-aid="{{item.id}}">
+                        <view class="section_cont_sub {{item.mac_source == 'offline'?'offlinecolor':' '}}">
+                            <text>{{item.hostname}}</text>
+                        </view>
+                        <view class="section_cont_price {{item.mac_source == 'offline'?'offlinecolor':' '}}">MAC:{{item.macaddr}}</view>
+                        <view>IP:{{item.ipaddr}}</view>
+                    </view>
+                    <!--book-->
+                    <navigator url="setDetail?macaddr={{item.macaddr}}&ipaddr={{item.ipaddr}}&up_quota={{item.up_quota}}&down_quota={{item.down_quota}}&is_vip={{item.is_vip}}&hostname={{item.hostname}}">
+                        <view class="section_book {{item.mac_source == 'offline'?'offlinebackground':' '}}" data-aid="{{item.id}}">
+                        <text>设置</text>
+                        </view>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+        </view>
+    </view>
+    <view class="ctnt1 placehold" hidden="{{currentNavtab==1 ? '' : true}}">
+        <view wx:if="{{disabledList.length}}" class="nav_section">
+        <view>
+            <block wx:for="{{disabledList}}" wx:key="item.id">
+                <view class="nav_section_items">
+                    <!--image-->
+                    <view class="section_image">
+                    <block wx:if="{{Organizations[item.vendor]}}">
+                        <image src="../../images/organiz/{{Organizations[item.vendor]}}" mode="aspectFill"></image>
+                    </block>
+                    <block wx:else>
+                        <image src="../../images/organiz/wireless.png" mode="aspectFill"></image>
+                    </block>
+                    </view>
+                    <!--content-->
+                    <view class="section_limit" data-aid="{{item.id}}">
+                        <text>{{item.macaddr}}</text>
+                    </view>
+                    <!--book-->
+                        <view class="section_book" data-mac="{{item.macaddr}}" bindtap="disabledChange">
+                            <text>解禁</text>
+                        </view>
+                </view>
+            </block>
+        </view>
+        </view>
+        <view wx:else class="connect-cont"><text>暂无</text></view>
+    </view>
+    <view class="ctnt1 placehold" hidden="{{currentNavtab==2 ? '' : true}}">
+        <view class="cont setSpeed-cont">
+            <view class="Grid2">
+                <view class="Grid-cell3 fontsize">全网限速功能</view>
+                <view class="Grid-cell1">
+                    <view class="body-view switch-right">
+                        <switch checked="{{isEnable}}" bindchange="switchQosChange"/>
+                    </view>
+                </view>
+            </view>
+            <view wx:if="{{isEnable == 'checked'}}">
+                <view class="Grid2">
+                    <view class="Grid-cell3">
+                        <input class="inp" type="number" bindinput="upSpeedInp" value="{{upSpeed}}" placeholder="请输入最大上行速率" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell1">KB/s</view>
+                </view>
+                <view class="Grid2 borbom">
+                    <view class="Grid-cell3">
+                        <input class="inp" type="number" bindinput="downSpeedInp" value="{{downSpeed}}" placeholder="请输入最大下行速率" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell1">KB/s</view>
+                </view>
+            </view>
+        </view>
+        <view class="ssbtn-cont" style="display:{{btnspeedBox}}">
+            <button class="btn" form-type="submit" bindtap="saveSetSpeed">保 存</button>
+        </view> 
+    </view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

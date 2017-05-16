@@ -1,0 +1,4 @@
+<!--pages/applyDetails/pppoeLog/pppoeLog.wxml-->
+<view class="logcont">
+  <textarea placeholder="正在获取拨号日志..." value='{{pppoeLog}}' disabled placeholder-style="color:#999;font-family:'微软雅黑';"  auto-focus="true" maxlength="-1"/>
+</view>

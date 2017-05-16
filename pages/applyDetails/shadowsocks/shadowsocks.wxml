@@ -1,0 +1,81 @@
+<view class="body">
+    <view class="cont">
+        <view class="Grid">
+            <view class="Grid-cell2">启用</view>
+            <view class="Grid-cell2"></view>
+            <view class="Grid-cell2">
+            <switch type="switch" checked="{{isOn}}" bindchange="switchTurn"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="cont">
+        <view class="Grid2">   
+            <view class="Grid-cell2">服务器</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="text" value="{{server}}" bindinput="serverInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+            <view class="Grid-cell2">端口</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="number" value="{{port}}" bindinput="portInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+            <view class="Grid-cell2">加密</view>
+            <view class="Grid-cell2">
+                <picker class="rightPick" value="{{encryptindex}}" range="{{encryptList}}" bindchange="bindencryptChange">
+                <text class="picker">{{encryptList[encryptindex]}}</text>
+                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid2">   
+            <view class="Grid-cell2">密码</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="password" value="{{password}}" bindinput="passwordInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+            <view class="Grid-cell2">代理模式</view>
+            <view class="Grid-cell2">
+                <picker class="rightPick" value="{{ProxyTypeindex}}" range="{{ProxyTypeList}}" bindchange="bindProxyTypeChange">
+                <text class="picker">{{ProxyTypeList[ProxyTypeindex]}}</text>
+                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+
+    </view>
+    <view class="cont" wx:if="{{ProxyTypeindex == 0}}">
+        <view class="Grid">
+            <view class="Grid-cell2">GFWList</view>
+            <view class="Grid-cell2 txtright"></view>
+            <view class="Grid-cell2">
+                <switch type="switch" checked="{{isGFWList}}" bindchange="switchGFWList"/>
+            </view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell3">{{refreshText}}</view>
+            <view class="Grid-cell1"><text class="greentxt" bindtap="bindRefreshTime">更 新</text></view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell2">自定义列表</view>
+            <view class="Grid-cell2 txtright"></view>
+            <view class="Grid-cell2">
+                <switch type="switch" checked="{{isCustom}}" bindchange="switchCustom"/>
+            </view>
+        </view>
+        <view wx:if="{{isCustom == 'checked'}}" class="bortop">
+            <textarea class="shadtextarea" value="{{CustomList}}" bindinput="customlistInp"/>
+        </view>
+    </view>
+
+    <view class="btncont" wx:if="{{isOn == 'checked'}}">
+        <button class="btn" form-type="submit" bindtap="saveShadowsocksChange">保 存</button>
+    </view>  
+</view>

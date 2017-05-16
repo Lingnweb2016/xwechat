@@ -1,0 +1,51 @@
+<view class="body">
+    <view class="top">
+        <view class="topTitle">手动设置IP</view>
+        <view class="topText">请输入相应内容</view>
+    </view>
+    <view class="choose">
+        <form>
+            <view class="cont">
+                <view class="Grid2"> 
+                    <view class="Grid-cell2">IP　地址</view>  
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{ipaddr}}" bindinput="ipaddrInp" placeholder="请输入IP地址" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+                <view class="Grid"> 
+                    <view class="Grid-cell2">子网掩码</view>  
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{netmask}}" bindinput="netmaskInp" placeholder="请输入子网掩码" placeholder-class="inpplacehold"/>
+                    </view>
+                    <view class="Grid-cell2"></view>
+                </view>
+                <view class="Grid">    
+                    <view class="Grid-cell2">默认网关</view>  
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{gateway}}" bindinput="gatewayInp" placeholder="请输入默认网关" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+                <view class="Grid"> 
+                    <view class="Grid-cell2">首选DNS</view>  
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{staticDns1}}" bindinput="staticDns1Inp" placeholder="请输入首选DNS" placeholder-class="inpplacehold"/>
+                    </view>
+                    <view class="Grid-cell2 txtsmall" bindtap="recommendDns">智能DNS推荐</view>
+                </view>
+                <view class="Grid">    
+                    <view class="Grid-cell2">备用DNS</view>  
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{staticDns2}}" bindinput="staticDns2Inp" placeholder="请输入备用DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2">(选填)</view>
+                </view>
+            </view>
+            
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveStaticChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>

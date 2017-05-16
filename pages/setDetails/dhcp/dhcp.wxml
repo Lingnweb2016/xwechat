@@ -1,0 +1,66 @@
+<view class="body">
+    <view class="choose">
+        <form> 
+            <view class="cont">
+                <view class="Grid-iprange">
+                    <label>IP分配范围</label>
+                </view>
+                <view class="Grid-iprange">
+                    <view class="ip-range">
+                        <text>{{lanIpAddr}}</text>
+                        <input class="inp-small" type="number" value="{{start}}" maxlength="254" minlength="1" id="range1" bindinput="startInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+                    </view>
+                    <text class="ip-text">到</text>
+                    <view class="ip-range">
+                        <text>{{lanIpAddr}}</text>
+                        <input class="inp-small" type="number" value="{{end}}" maxlength="254" minlength="1" id="range2" bindinput="endInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+                    </view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid2">   
+                    <view class="Grid-cell2">租用时间</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{timenum}}" bindinput="timenumInp" placeholder="请输入时长" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2">
+                        <picker value="{{index}}" range="{{time}}" bindchange="bindTimePickerChange">
+                            <text class="picker">{{time[index]}}</text>
+                            <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid2">
+                    <view class="Grid-cell2">DNS服务器</view>
+                    <view class="Grid-cell2 switch-tip">正常环境下不建议开启</view>
+                    <view class="Grid-cell2">
+                        <view class="body-view switch-right">
+                            <switch checked="{{isChecked}}"  bindchange="switchDnsChange"/>
+                        </view>
+                    </view>
+                </view>
+                <view style="display:{{dnsSwitch}}">
+                   <view class="Grid2">
+                    <view class="Grid-cell2">首选DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="primaryDnsInp" value="{{primaryDns}}" placeholder="请输入首选DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+                <view class="Grid2">
+                    <view class="Grid-cell2">备用DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="secondDnsInp" value="{{secondDns}}" placeholder="请输入备用DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2">(选填)</view>
+                </view> 
+                </view>
+            </view>
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveDhcpChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>    

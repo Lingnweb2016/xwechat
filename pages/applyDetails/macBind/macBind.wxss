@@ -1,0 +1,28 @@
+/* pages/applyDetails/macBind/macBind.wxss */
+.body{min-height:1210rpx;padding-top:40rpx;}
+.Grid-iprange{display:flex;height:100rpx;background-color:#fff;line-height:100rpx;padding-left:20rpx;}
+/*.ip-range{display:-webkit-flex;display:flex;border:1px solid #eee;height:70rpx;margin:0rpx 20rpx 30rpx 0;line-height:70rpx;border-radius:12rpx;padding:0 10rpx;color:#333;}*/
+.ip-text{line-height:70rpx;margin:0 20rpx 0 0;}
+.inp-small{height:70rpx;line-height:70rpx;padding-left:16rpx;font-size:32rpx;color:#333;font-family:"微软雅黑";}
+
+/* 导航对应内容项 */
+.cont-text{font-size:28rpx;padding:0 0 20rpx 20rpx;}
+.nav_section{width:100%;background-color:#fff;border-top:1px solid #ddd;}
+.nav_section_items{display:flex;flex-direction: row;justify-content: space-between;padding:30rpx;border-bottom:2rpx solid #ddd;position: relative;}
+.section_cont{width:330rpx;font-size:28rpx;color:#999;}
+.section_cont view{padding-top:10rpx;overflow:hidden;text-overflow: ellipsis;white-space:nowrap;display: block;}
+.section_cont view text{color:#333;}
+.section_devname{width:260rpx;font-size:28rpx;}
+.section_devname .section_cont_sub{font-size: 28rpx;line-height:50rpx;color:#999;margin-bottom:5rpx;}
+.mb-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.section_book{
+    width:80rpx;
+    height:80rpx;
+    font-size:26rpx;
+    border-radius:100%;
+    background:#0abcdf;
+    line-height: 80rpx;
+    color:#fff;
+    text-align: center;
+    /*margin-top:35rpx;*/
+}

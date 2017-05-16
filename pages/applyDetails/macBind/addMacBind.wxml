@@ -1,0 +1,38 @@
+<!--pages/applyDetails/macBind/addMacBind.wxml-->
+<view class="body">
+    <view class="cont">
+        <view class="Grid2">   
+            <view class="Grid-cell2">IP地址</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="text" value="{{curip}}" bindinput="ipInp" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2">
+                <picker value="{{ipindex}}" range="{{ips}}" bindchange="bindIpChange">
+                    <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">Mac地址</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="text" value="{{curmac}}" bindinput="macInp" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2">
+                <picker value="{{macindex}}" range="{{macs}}" bindchange="bindMacChange">
+                    <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">设备名称</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{curmask}}" type="text" bindinput="maskInp" placeholder="请输入设备名称" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="btns-cont">
+            <button class="del" bindtap="bindBack" bindtap="backBind">取 消</button>
+            <button class="save" bindtap="saveAddChange">保 存</button>
+        </view>
+    </view>
+</view>

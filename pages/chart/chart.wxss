@@ -1,0 +1,18 @@
+.Grid .img-cont{width:30rpx;height:30rpx;margin-top:35rpx;flex:none;border-radius:15rpx;background-color:#ccc;}
+.Grid-cell .ause{background-color:#f83947;}
+.Grid-cell .aavl{background-color:#2bb5f1;}
+.Grid-cell .buff{background-color:#fcc331;}
+.borbom{border-bottom:1px solid #eee;}
+.Grid-cell:nth-child(2){text-align:left;}
+.Grid-cell:nth-child(3){font-size:30rpx;color:#0abcdf;font-weight:bold;padding-right:50rpx;}
+.canvas{width:750rpx;}
+.cont{margin:0rpx auto 30rpx;text-align:center;font-size:28rpx;color:#666;}
+/*.cont{margin-top:100rpx;}*/
+.cont text{color:#0abcdf;font-weight:bold;}
+
+.container{background-color:#f1f1f1;}
+
+
+
+.areacanvas{height:450rpx;padding-top:50rpx;}
+/*.mb20{margin-bottom:20rpx;}*/

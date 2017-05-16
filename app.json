@@ -1,0 +1,74 @@
+{
+  "pages":[
+    "pages/deviceList/deviceList",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/set/set", 
+    "pages/apply/apply",
+    "pages/connect/connect",
+    "pages/connect/setDetail",
+    "pages/setDetails/wan/wan",
+    "pages/setDetails/wan/pppoe",
+    "pages/setDetails/wan/dhcp",
+    "pages/setDetails/wan/static",
+    "pages/setDetails/wan/relay",
+    "pages/setDetails/wifi/wifi",
+    "pages/setDetails/lan/lan",
+    "pages/setDetails/dhcp/dhcp",
+    "pages/setDetails/mtu/mtu",
+    "pages/setDetails/pwd/pwd",
+    "pages/applyDetails/pppoeLog/pppoeLog",
+    "pages/applyDetails/speedTest/speedTest",
+    "pages/applyDetails/macBind/macBind",
+    "pages/applyDetails/macBind/addMacBind",
+    "pages/applyDetails/netDiagnose/netDiagnose",
+    "pages/applyDetails/portForward/portForward",
+    "pages/applyDetails/portForward/addPortForward",
+    "pages/applyDetails/autoReboot/autoReboot",
+    "pages/applyDetails/apfreeWifiDog/apfreeWifiDog",
+    "pages/applyDetails/shadowsocks/shadowsocks",
+    "pages/applyDetails/adbyby/adbyby",
+    "pages/applyDetails/samba/samba",
+    "pages/applyDetails/samba/addSamba",
+    "pages/chart/chart"
+  ],
+  "window":{
+    "backgroundTextStyle":"black",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "坤腾路由助手",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "color": "#999",
+    "selectedColor":"#0abcdf",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/i-home.png",
+      "selectedIconPath": "images/i-home-a.png"
+    },
+    {
+      "pagePath": "pages/connect/connect",
+      "text": "连接",
+      "iconPath": "images/i-connect.png",
+      "selectedIconPath": "images/i-connect-a.png"
+    },  
+    {
+      "pagePath": "pages/set/set",
+      "text": "设置",
+      "iconPath": "images/i-set.png",
+      "selectedIconPath": "images/i-set-a.png"
+    },
+    {
+      "pagePath": "pages/apply/apply",
+      "text": "应用",
+      "iconPath": "images/i-apply.png",
+      "selectedIconPath": "images/i-apply-a.png"
+    }]
+  }
+}

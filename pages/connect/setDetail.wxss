@@ -1,0 +1,12 @@
+/* pages/connect/setDetail.wxss */
+
+.Grid2{display:flex;height:100rpx;background-color:#fff;line-height:100rpx;border-top:1px solid #eee;padding-left:20rpx;}
+.Grid-cell2:nth-child(1){flex:2;}
+.Grid-cell2:nth-child(2){flex:3;color:#333;text-overflow:ellipsis;}
+.Grid-cell2:nth-child(3){flex:2;padding-right:30rpx;color:#999;}
+.Grid-cell3{flex:2;}
+.inp-text{color:#000;}
+.inp-text2{padding-right:40rpx;color:#000;}
+.inpplacehold{color:#aaa;}
+.inp{width:120rpx;color:#000;padding-left:40rpx;}
+.text-ellipsis{display:inline-block;width:200rpx;height:100rpx;overflow:hidden;text-overflow:ellipsis;}

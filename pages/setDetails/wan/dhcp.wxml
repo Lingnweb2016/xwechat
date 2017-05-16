@@ -1,0 +1,41 @@
+<view class="body">
+    <view class="top">
+        <view class="topTitle">自动获取DHCP</view>
+        <view class="topText">由上级路由自动分配IP，无需设置</view>
+    </view>
+    <view class="choose">
+        <form> 
+            <view class="cont">
+                <view class="Grid2">
+                    <view class="Grid-cell2">DNS服务器</view>
+                    <view class="Grid-cell2 switch-tip"></view>
+                    <view class="Grid-cell2">
+                        <view class="body-view switch-right">
+                            <switch checked="{{isSwitchChecked}}" bindchange="switchDnsChange"/>
+                        </view>
+                    </view>
+                </view>
+                <view style="display:{{dnsSwitch}}">
+                   <view class="Grid2">
+                   <view class="Grid-cell2">首选DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="primayDnsInp" value="{{primayDns}}" placeholder="请输入首选DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2 txtsmall" bindtap="recommendDns">智能DNS推荐</view>
+                </view>
+                <view class="Grid2">
+                   <view class="Grid-cell2">备用DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="secondDnsInp" value="{{secondDns}}" placeholder="请输入备用DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2">(选填)</view>
+                </view> 
+                </view>
+            </view>
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveDhcpChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>
+

@@ -1,0 +1,72 @@
+<!--pages/connect/setDetail.wxml-->
+<view class="body">
+    <view class="choose">
+        <form>
+            <view class="cont">
+                <view class="Grid2">
+                    <view class="Grid-cell2">限速白名单</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell2">
+                        <view class="body-view switch-right">
+                            <switch checked="{{isVip}}" bindchange="switch1Change"/>
+                        </view>
+                    </view>
+                    <view class="Grid-cell2"></view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid2">   
+                    <view class="Grid-cell2">设备名称</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell2">
+                        <text class="inp-text text-ellipsis">{{hostname}}</text>
+                    </view>
+                </view>
+                <view class="Grid2">   
+                    <view class="Grid-cell2">MAC地址</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell2">
+                        <text class="inp-text">{{macaddr}}</text>
+                    </view>
+                </view>
+                <view class="Grid2">   
+                    <view class="Grid-cell2">IP地址</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell2">
+                        <text class="inp-text">{{ipaddr}}</text>
+                    </view>
+                </view>
+                <view class="Grid2">   
+                    <view class="Grid-cell2">上行速率</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell3">
+                        <input class="inp" type="number" value="{{upSpeed}}" placeholder-class="inpplacehold" bindinput="bindUpSpeed" auto-focus/>
+                    </view> 
+                    <view class="Grid-cell2">
+                        <text class="inp-text2">KB/s</text>
+                    </view> 
+                </view>
+                <view class="Grid2">   
+                    <view class="Grid-cell2">下行速率</view>
+                    <view class="Grid-cell2"></view> 
+                    <view class="Grid-cell3">
+                        <input class="inp" type="number" value="{{downSpeed}}" placeholder-class="inpplacehold" bindinput="bindDownSpeed"/>
+                    </view>
+                    <view class="Grid-cell2">
+                        <text class="inp-text2">KB/s</text>
+                    </view> 
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid2" bindtap="bindLinkControl">
+                    <view class="Grid-cell2">禁止上网</view>
+                    <view class="Grid-cell2"></view>
+                    <view class="Grid-cell2"></view>
+                </view>
+            </view>
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>

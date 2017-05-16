@@ -1,0 +1,17 @@
+.body{font-size:28rpx;}
+.timepicker{display:inline-block;margin:0 10rpx;border:1px solid #eee;height:50rpx;width:80rpx;line-height:50rpx;text-align:center;}
+.picker1{width:100rpx;height:60rpx;}
+.btn-cont{margin-top:30rpx;}
+
+
+
+
+
+
+
+
+
+
+
+
+

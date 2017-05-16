@@ -1,0 +1,15 @@
+<!--pages/applyDetails/adbyby/adbyby.wxml-->
+<view class="body">
+    <view class="cont">
+        <view class="Grid">
+            <view class="Grid-cell2">启用</view>
+            <view class="Grid-cell2"></view>
+            <view class="Grid-cell2">
+                <switch type="switch" checked="{{isOn}}" bindchange="switchTurn"/>
+            </view>
+        </view>
+    </view>
+    <view class='adbybytext'>
+        <view>广告屏蔽大师(adbyby)可以全面过滤各种横幅、弹窗、视频广告，同时阻止跟踪、隐私窃取及各种恶意网站. 更多详情请关注官网 <text>www.adbyby.com/</text></view>
+    </view>
+</view>

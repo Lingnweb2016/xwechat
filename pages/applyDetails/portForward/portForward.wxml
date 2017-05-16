@@ -1,0 +1,31 @@
+<!--pages/applyDetails/portForward/portForward.wxml-->
+<view class="body">
+    <view class="cont" wx:if="{{rules.length}}">
+        <block wx:for="{{rules}}" wx:key="delindex">
+            <view class="item">
+                <view class='item-msg'>
+                    <view class="pf-name"><text>名　　称</text> {{item.name}}</view>
+                    <view><text>协　　议</text> {{item.proto}}</view>
+                    <view><text>外部端口</text> {{item.srcport}}</view>
+                    <view><text>IP　地址</text> {{item.destip}}</view>
+                    <view><text>内部端口</text> {{item.destport}}</view>
+                </view>
+                <view class='item-btn'>
+                    <view data-sport='{{item.srcport}}' bindtap="delChange"><text>删除</text></view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:else>
+        <view class="connect-cont"><text>暂无</text></view>
+    </view>
+    <view class="choose">
+        <form>
+            <navigator url="addPortForward">
+                <view class="btn-cont">
+                    <button class="add-btn" form-type="submit">+ 添 加</button>
+                </view>
+            </navigator>
+        </form>            
+    </view>
+</view>

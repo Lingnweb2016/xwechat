@@ -1,0 +1,149 @@
+<view class="body">
+    <view class="choose">
+        <form>
+            <view class="cont" style="display:none;">
+                <view class="Grid">
+                    <view class="Grid-cell2">WiFi双频合并</view>
+                    <view class="Grid-cell2"></view>
+                    <view class="Grid-cell2">
+                        <switch type="switch" bindchange="wifiMerge"/>
+                    </view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid">
+                    <view class="Grid-cell2">{{MergeData.title}}</view>
+                    <view class="Grid-cell2"></view>
+                    <view class="Grid-cell2">
+                        <switch type="switch" checked="{{ischecked2g}}" bindchange="switch2gDisable"/>
+                    </view>
+                </view>
+                <view wx:if="{{switch2gcont != '1'}}">
+                    <view class="Grid2">   
+                        <view class="Grid-cell2">无线名称</view>
+                        <view class="Grid-cell2">
+                            <input class="inp" type="text" value="{{ssid2g}}" bindinput="ssid2gInp" placeholder="请输入2G无线名称" placeholder-class="inpplacehold"/>
+                        </view> 
+                        <view class="Grid-cell2"></view>
+                    </view>
+                    <view class="Grid">
+                        <view class="Grid-cell2">隐藏网络</view>
+                        <view class="Grid-cell2"></view>
+                        <view class="Grid-cell2">
+                            <switch type="switch"  bindchange="switch2gChange" checked="{{hidden2g}}"/>
+                        </view>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">加密方式</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index2gEncry}}" range="{{wifi2gencry}}" bindchange="bind2gEncry">
+                                <text class="picker">{{wifi2gencry[index2gEncry]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="Grid2" wx:if="{{index2gEncry == 1}}">   
+                        <view class="Grid-cell2">2.4G密码</view>
+                        <view class="Grid-cell2">
+                            <input class="inp" type="text" value="{{key2g}}" bindinput="key2gInp" password="{{inputType2g}}" focus='{{isfocus2g}}' placeholder="请输入密码" placeholder-class="inpplacehold"/>
+                        </view> 
+                        <view class="Grid-cell2 txtright">
+                            <view class="eyecont" bindtap="change2gPwdShow"><image class="eyeicon" src="../../../images/{{eyeState2g}}.png"></image></view>
+                        </view>
+                    </view>
+                    <view style="display:{{MergeData.tip}}">
+                        <text>2.4G无线网络</text>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">无线信道</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index2gChannel}}" range="{{wifi2gChannel}}" bindchange="bind2gChannel">
+                                <text class="picker">{{wifi2gChannel[index2gChannel]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">信号强度</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index2gTxpower}}" range="{{wifi2gTxpower}}" bindchange="bind2gTxpower">
+                                <text class="picker">{{wifi2gTxpower[index2gTxpower]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="cont" style="display:{{Box5g}}">
+                <!--<view style="display: {{MergeData.cont5g}};">-->
+                    <view class="Grid">
+                        <view class="Grid-cell2">5G无线网络</view>
+                        <view class="Grid-cell2"></view>
+                        <view class="Grid-cell2">
+                            <switch type="switch"  checked="{{ischecked5g}}" bindchange="switch5gDisable"/>
+                        </view>
+                    </view>
+                    <view wx:if="{{switch5gcont != '1'}}">
+                    <view class="Grid2">   
+                        <view class="Grid-cell2">无线名称</view>
+                        <view class="Grid-cell2">
+                            <input class="inp" type="text" value="{{ssid5g}}" bindinput="ssid5gInp" placeholder="请输入5G无线名称" placeholder-class="inpplacehold"/>
+                        </view> 
+                        <view class="Grid-cell2"></view>
+                    </view>
+                    <view class="Grid">
+                        <view class="Grid-cell2">隐藏网络</view>
+                        <view class="Grid-cell2"></view>
+                        <view class="Grid-cell2">
+                            <switch type="switch" bindchange="switch5gChange" checked="{{hidden5g}}"/>
+                        </view>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">加密方式</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index5gEncry}}" range="{{wifi5gencry}}" bindchange="bind5gEncry">
+                                <text class="picker">{{wifi5gencry[index5gEncry]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                <!--</view>-->
+                    <view class="Grid2" wx:if="{{index5gEncry == 1}}">   
+                        <view class="Grid-cell2">5G密码</view>
+                        <view class="Grid-cell2">
+                            <input class="inp" type='text' value="{{key5g}}" bindinput="key5gInp" password="{{inputType5g}}" focus='{{isfocus5g}}' placeholder="请输入密码" placeholder-class="inpplacehold"/>
+                        </view> 
+                        <view class="Grid-cell2 txtright">
+                            <view class="eyecont" bindtap="change5gPwdShow"><image class="eyeicon" src="../../../images/{{eyeState5g}}.png"></image></view>
+                        </view>
+                    </view>
+                    <view style="display:{{MergeData.tip}}">
+                        <text>5G无线网络</text>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">无线信道</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index5gChannel}}" range="{{wifi5gChannel}}" bindchange="bind5gChannel">
+                                <text class="picker">{{wifi5gChannel[index5gChannel]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="Grid">   
+                        <view class="Grid-cell2">信号强度</view>
+                        <view class="Grid-cell2">
+                            <picker class="rightPick" value="{{index5gTxpower}}" range="{{wifi5gTxpower}}" bindchange="bind5gTxpower">
+                                <text class="picker">{{wifi5gTxpower[index5gTxpower]}}</text>
+                                <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                            </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btncont">
+                <button class="btn" form-type="submit" bindtap="saveWifiChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>

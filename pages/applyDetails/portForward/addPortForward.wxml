@@ -1,0 +1,49 @@
+<view class="body">
+    <view class="cont">
+        <view class="Grid2">
+            <view class="Grid-cell2">名　　称</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{curname}}" type="text" bindinput="nameInp" placeholder="请输入名称" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+            <view class="Grid-cell2">协　　议</view>
+            <view class="Grid-cell2">
+                <picker class="rightPick" value="{{protoindex}}" range="{{protos}}" bindchange="bindProtoChange">
+                    <text class="picker">{{protos[protoindex]}}</text>
+                    <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">外部端口</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{cursrcport}}" type="number" bindinput="srcportInp" placeholder="请输入外部端口" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">IP　地址</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="text" value="{{curip}}"  placeholder="{{ips[ipindex]}}" bindinput="ipInp" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2">
+                <picker value="{{ipindex}}" range="{{ips}}" bindchange="bindIpChange">
+                    <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+                </picker>
+            </view>
+        </view>
+        <view class="Grid2">
+            <view class="Grid-cell2">内部端口</view>
+            <view class="Grid-cell2">
+                <input class="inp" value="{{curdestport}}" type="number" bindinput="destportInp" placeholder="请输入内部端口" placeholder-class="inpplacehold"/>
+            </view>
+            <view class="Grid-cell2"></view>
+        </view>
+        <view class="btns-cont">
+            <button class="del" bindtap="bindBack" bindtap="backBind">取 消</button>
+            <button class="save" bindtap="saveAddChange">保 存</button>
+        </view>
+    </view>
+</view>

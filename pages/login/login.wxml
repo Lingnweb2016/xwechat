@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="cont" style="display:{{bodyStyle}}">
+  <view>
+    <view class="top2">
+        <view class="topTitle">
+            <view class="bigCircle">
+                <view class="circle">
+                    <image class="cirimg" src="../../images/wirelesslog.png"></image>
+                </view>
+            </view>
+            <view class="msg">{{logigMsg}}</view>
+        </view>
+    </view>
+    <form bindsubmit="formSubmit">
+        <view class="form">
+            <input id="pwd" bindinput="bindKeyInput" class="loginp loginp1" type="password" placeholder="输入路由器管理密码" placeholder-style="font-family:'微软雅黑'" auto-focus/>
+            <button bindtap="bindSubmit" class="loginp loginp2">登 录</button>
+        </view>
+    </form>
+  </view>
+</view> 

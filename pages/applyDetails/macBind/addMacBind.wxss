@@ -1,0 +1,20 @@
+/* pages/applyDetails/macBind/addMacBind.wxss */
+.body{font-size:30rpx;min-height:1250rpx;}
+.Grid-cell2:nth-child(1){flex:2}
+.Grid-cell2:nth-child(2){flex:5}
+.Grid-cell2:nth-child(3){flex:1}
+.Grid-cell2.switch-tip{text-align:right;color:#ccc;padding-right:20rpx;}
+/*.switch-right{text-align:right;}*/
+.arrowdown{display:inline-block;width:40rpx;height:40rpx;padding-left:20rpx;}
+.arrowdown image{width:100%;height:100%;}
+
+
+.btns-cont{padding:20rpx;border-top:1px solid #eee;}
+.btns-cont button{width:330rpx;display:inline-block;height:100rpx;line-height:100rpx;font-size:34rpx;}
+.save{width:100%;height:100rpx;border:none;color:#fff;background-color:#0abcdf;margin-left:50rpx;}
+
+
+
+
+
+

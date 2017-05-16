@@ -1,0 +1,19 @@
+/* pages/setDetails/dhcp/dhcp.wxss */
+.Grid-iprange{display:flex;height:100rpx;background-color:#fff;line-height:100rpx;padding-left:20rpx;}
+.ip-range{display:-webkit-flex;display:flex;border:1px solid #eee;height:70rpx;margin:0rpx 20rpx 30rpx 0;line-height:70rpx;border-radius:12rpx;padding:0 10rpx;color:#333;}
+.ip-text{line-height:70rpx;margin:0 20rpx 0 0;}
+.inp-small{height:70rpx;line-height:70rpx;padding-left:16rpx;font-size:32rpx;color:#333;font-family:"微软雅黑";}
+.Grid-cell2.switch-tip{text-align:right;color:#ccc;padding-right:20rpx;}
+/*.switch-right{text-align:right;}*/
+.arrowdown{display:inline-block;width:40rpx;height:40rpx;padding-left:20rpx;}
+.arrowdown image{width:100%;height:100%;}
+.Grid-cell2:nth-child(1){font-size:28rpx;}
+
+
+
+
+
+
+
+
+

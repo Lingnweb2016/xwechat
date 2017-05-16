@@ -1,0 +1,15 @@
+/* pages/setDetails/wifi/wifi.wxss */
+.body{height:auto;min-height:1250rpx;}
+.Grid2{display:flex;height:100rpx;background-color:#fff;line-height:100rpx;border-top:1px solid #eee;padding-left:20rpx;color:#333;}
+.Grid-cell2:nth-child(1){flex:3;}
+.Grid-cell2:nth-child(2){flex:5;color:#333;text-overflow:ellipsis;text-align:right;}
+.Grid-cell2:nth-child(3){flex:2;padding-right:30rpx;color:#999;}
+
+
+.arrowdown{display:inline-block;width:40rpx;height:40rpx;padding-left:20rpx;}
+.arrowdown image{width:100%;height:100%;}
+.btncont{padding-bottom:100rpx;}
+.inpplacehold{color:#ccc;}
+
+.rightPick{text-align:right;padding-right:40rpx;}
+.txtright{padding-right:30rpx;text-align:right;}

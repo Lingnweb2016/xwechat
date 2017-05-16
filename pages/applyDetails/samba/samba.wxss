@@ -1,0 +1,10 @@
+.body{height:auto;min-height:1251rpx;background-color:#eee;padding-bottom:40rpx;}
+.item{background-color:#fff;padding:20rpx 30rpx;display:flex;margin-bottom:20rpx;font-size:28rpx;}
+.item-msg{flex:5;}
+.item-btn{flex:1;}
+.item .item-msg view{line-height:50rpx;}
+.item .item-msg view text{color:#aaa;display:inline-block;width:150rpx;text-align: justify;}
+.item .item-btn view{width:80rpx;height:80rpx;border-radius:40rpx;background-color:#0abcdf;color:#fff;margin-top:80rpx;line-height:80rpx;text-align:center;}
+.sam-name{overflow:hidden;text-overflow:ellipsis;
+white-space:nowrap;display:block;width:500rpx;}
+.connect-cont{padding:60rpx;font-size:28rpx;color:#666;text-align:center;}

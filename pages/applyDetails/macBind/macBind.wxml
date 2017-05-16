@@ -1,0 +1,35 @@
+<view class="body">
+    <view class="cont-text">已绑定设备</view>
+    <view class="nav_section">
+      <view>
+          <block wx:for="{{bindList}}" wx:key="delindex">
+              <view class="nav_section_items" data-class="{{item.mac_source}}">
+                  <!--content-->
+                  <view class="section_cont" bindtap="navigateDetail" data-id="{{item.id}}">
+                      <view><text>MAC:</text>{{item.macaddr}}</view>
+                      <view><text>IP:</text>{{item.ipaddr}}</view>
+                  </view>
+                  <!--image-->
+                  <view class="section_devname" bindtap="navigateDetail" data-id="{{item.id}}">
+                      <view class="section_cont_sub">设备名称</view>
+                      <view class="mb-name" wx:if="{{item.mask}}">{{item.mask}}</view>
+                      <view class="mb-name" wx:else>无</view>
+                  </view>
+                  <!--book-->
+                  <view class="section_book" data-delindex='{{index}}' bindtap="delChange" data-id="{{item.id}}">
+                      <text>删除</text>
+                  </view>
+              </view>
+          </block>
+      </view>
+    </view>
+    <view class="choose">
+        <form>
+            <navigator url="addMacBind">
+                <view class="btn-cont">
+                    <button class="add-btn" form-type="submit">+ 添 加</button>
+                </view>
+            </navigator>
+        </form>            
+    </view>
+</view> 

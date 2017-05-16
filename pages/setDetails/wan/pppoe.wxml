@@ -1,0 +1,58 @@
+<view class="body">
+    <view class="top">
+        <view class="topTitle">宽带拨号设置</view>
+        <view class="topText">请输入宽带账号和密码</view>
+    </view>
+    <view class="choose">
+        <form>
+            <view class="cont">
+                <view class="Grid2">
+                    <view class="Grid-cell2">宽带账号</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value='{{username}}' bindinput='userInp' placeholder="请输入宽带账号" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+                <view class="Grid2">   
+                    <view class="Grid-cell2">宽带密码</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" value="{{password}}" bindinput='pwdInp' password="{{inputType}}" focus='{{isfocus}}' placeholder="请输入宽带密码" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2 txtright">
+                        <view class="eyecont" bindtap="changePwdShow"><image class="eyeicon" src="../../../images/{{eyeState}}.png"></image></view>
+                    </view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="Grid2">
+                    <view class="Grid-cell2">DNS服务器</view>
+                    <view class="Grid-cell2 switch-tip"></view>
+                    <view class="Grid-cell2">
+                        <view class="body-view switch-right">
+                            <switch checked="{{isSwitchChecked}}"  bindchange="switchDnsChange"/>
+                        </view>
+                    </view>
+                </view>
+                <view style="display:{{dnsSwitch}}">
+                   <view class="Grid2">
+                   <view class="Grid-cell2">首选DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="primayDnsInp" value="{{primayDns}}" placeholder="请输入首选DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2 txtsmall" bindtap="recommendDns">智能DNS推荐</view>
+                </view>
+                <view class="Grid2">
+                   <view class="Grid-cell2">备用DNS</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="secondDnsInp" value="{{secondDns}}" placeholder="请输入备用DNS" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2">(选填)</view>
+                </view> 
+                </view>
+            </view>
+            <view>
+                <button class="btn" form-type="submit" bindtap="savePppoeChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>

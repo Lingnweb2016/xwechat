@@ -1,0 +1,50 @@
+<view class="body">
+    <view class="cont">
+        <navigator url="../setDetails/wan/wan">
+            <view class="Grid">
+                <view class="Grid-cell">上网设置</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+        <navigator url="../setDetails/wifi/wifi">
+            <view class="Grid">
+                <view class="Grid-cell">无线设置</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+        <navigator url="../setDetails/lan/lan">
+            <view class="Grid">
+                <view class="Grid-cell">内网设置</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+        <navigator url="../setDetails/dhcp/dhcp">
+            <view class="Grid">
+                <view class="Grid-cell">DHCP设置</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+        <navigator url="../setDetails/mtu/mtu">
+            <view class="Grid">
+                <view class="Grid-cell">MTU设置</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+        <navigator url="../setDetails/pwd/pwd">
+            <view class="Grid">
+                <view class="Grid-cell">修改密码</view>
+                <view class="Grid-cell">〉</view>
+            </view>
+        </navigator>
+    </view>
+    <view class="cont">
+        <view class="Grid" bindtap="bindExit">
+            <view class="Grid-cell">退 出</view>
+            <view class="Grid-cell"></view>
+        </view>
+        <view class="Grid" bindtap="bindRestart">
+            <view class="Grid-cell">重启路由器</view>
+            <view class="Grid-cell"></view>
+        </view>
+    </view>
+</view>

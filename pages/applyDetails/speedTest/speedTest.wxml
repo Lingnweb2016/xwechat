@@ -1,0 +1,50 @@
+<view class="body">
+    <view class="top">
+        <view class="topTitle">路由器外网测速</view>
+        <view class="" wx:if="{{upload}}">
+            <button size="mini" class="minbtn" bindtap="bindRetest">重新测速</button>
+        </view>
+    </view>
+    <view class="result-cont"  wx:if="{{upload}}">
+        <view class="topText">
+            <view class="speed">
+                <view class="num">{{upload}}</view>
+                <view class="numright">
+                    <view>Mbps</view>
+                    <view>上行带宽</view>
+                </view>
+            </view>
+            <view class="speed">
+                <view class="ruleline"></view>
+                <view class="num">{{download}}</view>
+                <view class="numright">
+                    <view>Mbps</view>
+                    <view>下行带宽</view>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+    <view class="loading-cont" wx:else>
+        <view class='img-cont'><image src="../../../images/loading.gif"></image></view>
+        <view><text>正在测速...</text></view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

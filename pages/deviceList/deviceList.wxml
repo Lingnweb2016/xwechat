@@ -1,0 +1,45 @@
+<view class="cont">
+    <view class="noDevice" style="display:{{isNoDevice}}">
+        <view class="tip"><text>您当前没有可管理的设置，请添加</text></view>
+        <view class="btn" bindtap="formShowInp">添加设备</view>
+    </view>
+    <view class="addDevice" style="display:{{isAddDevice}}">
+        <view class="inpcont">
+            <input id="pwd" bindinput="macInp" class="loginp loginp1" value="{{mac}}" type="text" placeholder="输入设备MAC地址" placeholder-style="font-family:'微软雅黑'" auto-focus/>
+            <button bindtap="bindSubmit" class="loginp loginp2" bindtap="saveAddDevice">添加设备</button>
+        </view>
+        <view class="closecont"><image bindtap="closeAddLayer" src="../../images/i_close.png"></image></view>
+    </view>
+    <view class="hasDevice">
+        <view class="deviceList" style="display:{{isHasDevice}}">
+            <view class="listLine"><text>设备列表</text></view>
+            <view class="listCont">
+                <block wx:for="{{macListArr}}" wx:key="item.id">
+                    <view class="nav_section_items">
+                        <view class="section_cont" bindtap="clickDeviceList" data-mac="{{item.mac}}" data-online='{{item.online}}'>
+                            <text>{{item.mac}}</text>
+                            <view class='loadcont' wx:if='{{item.online == "loading"}}'><image src="../../images/loading.gif"></image></view>
+                            <text wx:if="{{item.online == true}}">  (在线)</text>
+                            <text wx:if="{{item.online == false}}" class='offlineColor'>  (离线)</text>
+                            <!--<text wx:else>  (未知)</text>-->
+                        </view>
+                        <view class="section_book" bindtap="clickDelMac" data-mac="{{item.mac}}">
+                            <text>删除</text>
+                        </view>
+                    </view>
+                </block>
+            </view>    
+        </view>
+        <view class="deviceList" style='display:{{isActive}}'>
+            <view class="listCont noborder">
+                <view class="nav_section_items noborder">
+                    <!--content-->
+                    <view class="section_cont" bindtap="turnLogin">
+                        <text class='actcolor'>当前设备SSID:</text><text>  {{activeSsid}}</text>
+                    </view>
+                </view>
+            </view>    
+        </view>
+        <view class="listBtn" bindtap="formShowInp" style='display:{{isHasDevice}}'>添加设备</view>
+    </view>
+</view>

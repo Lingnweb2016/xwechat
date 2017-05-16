@@ -1,0 +1,111 @@
+<view class="top-tab flex-wrp flex-tab " >
+    <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}"  wx:key="item.id" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+        {{itemName}}
+    </view>
+</view>
+<view class="contapfree">
+  <view hidden="{{currentNavtab==0 ? '' : true}}">
+    <view>
+      <view class="cont">
+        <view class="Grid">
+          <view class="Grid-cell2">Portal开关</view>
+          <view class="Grid-cell2"></view>
+          <view class="Grid-cell2">
+            <switch type="switch" checked="{{isOn}}" bindchange="switchTurn"/>
+          </view>
+        </view>
+      </view>
+      <view class="cont">
+        <view class="Grid2">   
+          <view class="Grid-cell2">认证服务器</view>
+          <view class="Grid-cell2">
+              <input class="inp" type="text" value="{{authserver}}" bindinput="authserverInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+          </view> 
+          <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+          <view class="Grid-cell2">服务器端口</view>
+          <view class="Grid-cell2">
+              <input class="inp" type="number" value="{{authport}}" bindinput="authportInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+          </view> 
+          <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+          <view class="Grid-cell2">服务器路径</view>
+          <view class="Grid-cell2">
+              <input class="inp" type="text" value="{{authpath}}" bindinput="authpathInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+          </view> 
+          <view class="Grid-cell2"></view>
+        </view>
+        <view class="Grid2">   
+          <view class="Grid-cell2">线程池模式</view>
+          <view class="Grid-cell2">
+            <picker class="rightPick" value="{{poolindex}}" range="{{poolmode}}" bindchange="bindPoolChange">
+              <text class="picker">{{poolmode[poolindex]}}</text>
+              <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+            </picker>
+          </view>
+        </view>
+        <view wx:if="{{poolindex == '1'}}">
+          <view class="Grid2">   
+            <view class="Grid-cell2">线程数</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="number" value="{{threadnumber}}" bindinput="threadnumbertInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2"></view>
+          </view>
+          <view class="Grid2">   
+            <view class="Grid-cell2">队列大小</view>
+            <view class="Grid-cell2">
+                <input class="inp" type="number" value="{{queuesize}}" bindinput="queuesizeInp" placeholder="请输入" placeholder-class="inpplacehold"/>
+            </view> 
+            <view class="Grid-cell2"></view>
+          </view>
+        </view>
+        <view class="Grid2">   
+          <view class="Grid-cell2">有线免认证</view>
+          <view class="Grid-cell2">
+            <picker class="rightPick" value="{{wiredindex}}" range="{{wiredpass}}" bindchange="bindWiredChange">
+              <text class="picker">{{wiredpass[wiredindex]}}</text>
+              <view class="arrowdown"><image src="../../../images/icon-arrowdown.png"></image></view>
+            </picker>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view hidden="{{currentNavtab==1 ? '' : true}}">
+    <view class='apip'>
+      <view class="textareacont">
+        <view class="aptitle">泛域名白名单</view>
+        <textarea class="aptextarea" maxlength='-1' value="{{whiteExtdomain}}" bindinput="bindWhiteExtdomainInp"/>
+      </view>
+      <view class="textareacont">
+        <view class="aptitle">域名白名单</view>
+        <textarea class="aptextarea" maxlength='-1' value="{{whiteDomain}}" bindinput="bindWhiteDomainInp"/>
+      </view>
+      <view class="textareacont padbot">
+        <view class="aptitle">IP白名单</view>
+        <textarea class="aptextarea" maxlength='-1' value="{{whiteIp}}" bindinput="bindWhiteIpInp"/>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{currentNavtab==2 ? '' : true}}">
+    <view class='apip'>
+      <view class="textareacont">
+        <view class="aptitle">MAC白名单</view>
+        <textarea class="aptextarea" maxlength='-1' value="{{whiteMac}}" bindinput="bindWhiteMacInp"/>
+      </view>
+      <view class="textareacont">
+        <view class="aptitle">MAC黑名单</view>
+        <textarea class="aptextarea" maxlength='-1' value="{{blackMac}}" bindinput="bindBlackMacInp"/>
+      </view>
+    </view>
+  </view>
+
+  
+  <view class="btncont" wx:if="{{isOn == 'checked'}}">
+    <button class="btn" form-type="submit" bindtap="saveApfreeChange">保 存</button>
+  </view>  
+</view>

@@ -1,0 +1,14 @@
+<view class="body">
+    <view class="diag-top">
+        <view class="diag-img-cont"><image src="../../../images/diagnose-pic.png"></image></view>
+    </view>
+    <view class="loading-cont" style="display:{{loading}}">
+        <view class='img-cont'><image src="../../../images/loading.gif"></image></view>
+        <view class="loading-msg">正在进行网络诊断，请稍后...</view>
+    </view>
+    <view class="diaged-cont" style="display:{{rescont}}">
+        <view class='img-cont'><icon type="{{iconType}}" size="45"></icon></view>
+        <view class="loading-msg">{{msg}}</view>
+    </view>
+    <view class="diag-btn-cont" style="display:{{btncont}}"><button size="mini" type="primary" bindtap="bindDiagnose">{{btnText}}</button></view>
+</view>

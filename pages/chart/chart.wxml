@@ -1,0 +1,51 @@
+<!--pages/chart/chart.wxml-->
+<!--<view class="top-tab flex-wrp flex-tab " >
+    <view class="toptab flex-item {{currentNavtab==idx ? 'active' : ''}}" wx:for="{{navTab}}" wx:key="item.id" wx:for-index="idx" wx:for-item="itemName" data-idx="{{idx}}" bindtap="switchTab">
+        {{itemName}}
+    </view>
+</view>-->
+<view class="cont">
+    <view hidden="{{currentNavtab == 1?'' : true}}">
+        <view class="container">
+            <canvas canvas-id="areaCanvas" class="canvas areacanvas" bindtouchstart="touchHandler"></canvas>
+        </view>
+    </view>
+
+
+    <view hidden="{{currentNavtab==2 ? '' : true}}">
+        <view class="container">
+            <canvas canvas-id="ringCanvas" class="canvas" style="height:240px" bindtouchstart="touchHandler"></canvas>
+        </view>
+        <!--<view>内存：<text>{{atotle}}M</text> | 已用：<text>{{ause}}M</text> | 空闲：<text>{{aavl}}M</text></view>-->
+        <view class='mb20'>
+            <view class="Grid">
+                <view class="Grid-cell">
+                    <view class="img-cont"></view>
+                </view>
+                <view class="Grid-cell">内 存</view>
+                <view class="Grid-cell">{{atotle}} M</view>
+            </view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell">
+                <view class="img-cont aavl"></view>
+            </view>
+            <view class="Grid-cell">空 闲</view>
+            <view class="Grid-cell">{{aavl}} M</view>
+        </view>
+        <view class="Grid">
+            <view class="Grid-cell">
+                <view class="img-cont ause"></view>
+            </view>
+            <view class="Grid-cell">已 用</view>
+            <view class="Grid-cell">{{ause}} M</view>
+        </view>
+        <view class="Grid borbom">
+            <view class="Grid-cell">
+                <view class="img-cont buff"></view>
+            </view>
+            <view class="Grid-cell">缓 存</view>
+            <view class="Grid-cell">{{buff2}} M</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="body">
+    <view class="choose">
+        <form>
+            <view class="cont">
+                <view class="Grid2">   
+                    <view class="Grid-cell2">IP地址</view>
+                    <view class="Grid-cell2">
+                        <input class="inp" type="text" bindinput="lanInp" value="{{ipAddr}}" placeholder="请输入IP地址" placeholder-class="inpplacehold"/>
+                    </view> 
+                    <view class="Grid-cell2"></view>
+                </view>
+            </view>
+            
+            <view>
+                <button class="btn" form-type="submit" bindtap="saveLanChange">保 存</button>
+            </view>
+        </form>            
+    </view>
+</view>
