@@ -44,7 +44,7 @@ Page({
     }else{//远程管理
 
       wx.request({
-        url: 'https://xwechat.kunteng.org:65443/api/v1/users/' + that.data.openid + '/opt/' + mac + '/reproxy/https',
+        url: 'https://xwechat.xxxxxxxx.org:65443/api/v1/users/' + that.data.openid + '/opt/' + mac + '/reproxy/https',
         data:{},
         method:'POST',
         header:{'content-type':'application/json'},
@@ -58,7 +58,7 @@ Page({
           wx.setStorage({
             key: "URL",
             // data:remoteUrl
-            data: 'https://wifi.kunteng.org:' + that.data.remoteport
+            data: 'https://xxxxxxxxxxxxxxxxxx:' + that.data.remoteport
           });
           wx.setStorage({
             key: 'mac',
@@ -92,7 +92,7 @@ Page({
           
           
           wx.request({
-            url: 'https://xwechat.kunteng.org:65443/api/v1/users/'+ that.data.openid +'/devices/'+ mac,
+            url: 'https://xwechat.xxxxxxx.org:65443/api/v1/users/'+ that.data.openid +'/devices/'+ mac,
             //data: {},
             method: 'PUT', 
             header: {'content-type': 'application/json'},
@@ -140,7 +140,7 @@ Page({
     var that = this;
     wx.setStorage({
         key:"URL",
-        data:'https://wifi.kunteng.org'
+        data:'https://xxxxxxxxxxxxxxxxxxxx'
       });
       wx.setStorage({
         key: 'mac',
@@ -192,7 +192,7 @@ Page({
       mac = (that.data.mac).toUpperCase();
     }
     wx.request({
-      url: 'https://xwechat.kunteng.org:65443/api/v1/users/'+ that.data.openid +'/devices/'+ mac,
+      url: 'https://xwechat.xxxxxxx.org:65443/api/v1/users/'+ that.data.openid +'/devices/'+ mac,
       //data: {syspwd:'wlife'},
       method: 'POST', 
       header: {'content-type': 'application/json'},
@@ -215,7 +215,7 @@ Page({
             macListArr: newArr
           });
           wx.request({
-            url: 'https://xwechat.kunteng.org:65443/api/v1/users/' + that.data.openid + '/opt/' + mac + '/ping',
+            url: 'https://xwechat.xxxxxxxxxxx.org:65443/api/v1/users/' + that.data.openid + '/opt/' + mac + '/ping',
             method: 'GET',
             header: { 'content-type': 'application/json' },
             success: function (res) {
@@ -293,8 +293,7 @@ Page({
               var openid = res.data.openid;
 
               wx.request({
-                //url: 'https://xwechat.kunteng.org/api/v1/users/'+ openid +'/devices',
-                url: 'https://xwechat.kunteng.org:65443/api/v1/users/'+ openid +'/devices',
+                url: 'https://xwechat.xxxxxxxx.org:65443/api/v1/users/'+ openid +'/devices',
                 method: 'GET', 
                 header: {"content-type":"application/json"}, 
                 success: function(res){
@@ -317,7 +316,7 @@ Page({
                     for(var i =0;i<that.data.macListArr.length;i++){
                       var activeMac = that.data.macListArr[i].mac;
                       wx.request({
-                        url: 'https://xwechat.kunteng.org:65443/api/v1/users/' + that.data.openid + '/opt/' + that.data.macListArr[i].mac + '/ping',
+                        url: 'https://xwechat.xxxxxxxx.org:65443/api/v1/users/' + that.data.openid + '/opt/' + that.data.macListArr[i].mac + '/ping',
                         method:'GET',
                         header:{'content-type':'application/json'},
                         success: function(res){
@@ -359,7 +358,7 @@ Page({
               });
 
               wx.request({
-                url:'https://wifi.kunteng.org/cgi-bin/luci/guest/info',
+                url:'https://xxxxxxxxxxxxxxxx.org/cgi-bin/luci/guest/info',
                 header:{'content-type': 'application/json'},
                 success: function(res){
                   //console.log(res);
@@ -400,7 +399,7 @@ Page({
     
 
     wx.request({
-      url: 'https://xwechat.kunteng.org:65443/api/v1/users/' + that.data.openid + '/devices',
+      url: 'https://xwechat.xxxxxxxxxxx.org:65443/api/v1/users/' + that.data.openid + '/devices',
       method: 'GET',
       header: { "content-type": "application/json" },
       success: function (res) {
@@ -423,7 +422,7 @@ Page({
           for (var i = 0; i < that.data.macListArr.length; i++) {
             var activeMac = that.data.macListArr[i].mac;
             wx.request({
-              url: 'https://xwechat.kunteng.org:65443/api/v1/users/' + that.data.openid + '/opt/' + that.data.macListArr[i].mac + '/ping',
+              url: 'https://xwechat.xxxxxxxxxxxxxxx.org:65443/api/v1/users/' + that.data.openid + '/opt/' + that.data.macListArr[i].mac + '/ping',
               method: 'GET',
               header: { 'content-type': 'application/json' },
               success: function (res) {
@@ -469,7 +468,7 @@ Page({
     });
 
     wx.request({
-      url: 'https://wifi.kunteng.org/cgi-bin/luci/guest/info',
+      url: 'https://xxxxxxxxxxxxxxx/cgi-bin/luci/guest/info',
       header: { 'content-type': 'application/json' },
       success: function (res) {
         //console.log(res);
