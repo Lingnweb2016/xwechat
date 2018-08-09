@@ -1,7 +1,7 @@
-# xwechat-Î¢ĞÅĞ¡³ÌĞò
-Î¢ĞÅĞ¡³ÌĞò-Â·ÓÉÆ÷ÉèÖÃ
+# xwechat-å¾®ä¿¡å°ç¨‹åº
+å¾®ä¿¡å°ç¨‹åº-è·¯ç”±å™¨è®¾ç½®
 
-
+[![]](http://github.com/Lingnweb2016/xwechat/master/img/1.jpg)
 
 
 
